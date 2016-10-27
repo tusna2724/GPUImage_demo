@@ -22,7 +22,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
 #pragma mark - 1. 图片+滤镜
-    UIImage *image = [UIImage imageNamed:@"ios"];
+    UIImage *image = [UIImage imageNamed:@"iOS"];
     
     //    GPUImageGammaFilter *stretchDis = [GPUImageGammaFilter new]; // 伽马
     //    GPUImageSphereRefractionFilter *stretchDis = [GPUImageSphereRefractionFilter new];//鱼眼倒立
