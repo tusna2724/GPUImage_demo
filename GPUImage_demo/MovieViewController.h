@@ -1,5 +1,5 @@
 //
-//  MovieFilterViewController.h
+//  MovieViewController.h
 //  GPUImage_demo
 //
 //  Created by tusna2724 on 16/10/27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovieFilterViewController : UIViewController
+@interface MovieViewController : UIViewController
 
 @end

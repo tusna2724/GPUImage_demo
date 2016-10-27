@@ -23,7 +23,7 @@
 		9EAB2AAE1DBEF9160024456D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB2AAD1DBEF9160024456D /* CoreGraphics.framework */; };
 		9EAB2AB01DBEF9210024456D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB2AAF1DBEF9210024456D /* UIKit.framework */; };
 		9EAB2AB21DBEF9260024456D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB2AB11DBEF9260024456D /* Foundation.framework */; };
-		9EAB2CDC1DBEFF0C0024456D /* ios.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2CDB1DBEFF0C0024456D /* ios.png */; };
+		9EAB2CDC1DBEFF0C0024456D /* iOS.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2CDB1DBEFF0C0024456D /* iOS.png */; };
 		9EAB2E831DBF05030024456D /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2D0C1DBF05020024456D /* lookup.png */; };
 		9EAB2E841DBF05030024456D /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2D0D1DBF05020024456D /* lookup_amatorka.png */; };
 		9EAB2E851DBF05030024456D /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2D0E1DBF05020024456D /* lookup_miss_etikate.png */; };
@@ -206,9 +206,9 @@
 		9EAB2F4B1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2F4A1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 */; };
 		9EAB2F4E1DC0816F0024456D /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F4D1DC0816F0024456D /* GPUImageBeautifyFilter.m */; };
 		9EAB2F511DC193B30024456D /* PictureFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F501DC193B30024456D /* PictureFilterViewController.m */; };
-		9EAB2F541DC1950A0024456D /* MovieFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F531DC1950A0024456D /* MovieFilterViewController.m */; };
 		9EAB2F581DC198560024456D /* LiveCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F561DC198560024456D /* LiveCameraViewController.m */; };
-		9EAB2F591DC198560024456D /* MovieFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2F571DC198560024456D /* MovieFilterViewController.xib */; };
+		9EAB2F641DC1CD170024456D /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F621DC1CD170024456D /* MovieViewController.m */; };
+		9EAB2F651DC1CD170024456D /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2F631DC1CD170024456D /* MovieViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,7 +287,7 @@
 		9EAB2AAD1DBEF9160024456D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9EAB2AAF1DBEF9210024456D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EAB2AB11DBEF9260024456D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9EAB2CDB1DBEFF0C0024456D /* ios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios.png; sourceTree = "<group>"; };
+		9EAB2CDB1DBEFF0C0024456D /* iOS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOS.png; sourceTree = "<group>"; };
 		9EAB2D051DBF05020024456D /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = GPUImage.xcodeproj; sourceTree = "<group>"; };
 		9EAB2D0C1DBF05020024456D /* lookup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup.png; sourceTree = "<group>"; };
 		9EAB2D0D1DBF05020024456D /* lookup_amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_amatorka.png; sourceTree = "<group>"; };
@@ -650,11 +650,11 @@
 		9EAB2F4D1DC0816F0024456D /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		9EAB2F4F1DC193B30024456D /* PictureFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureFilterViewController.h; sourceTree = "<group>"; };
 		9EAB2F501DC193B30024456D /* PictureFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureFilterViewController.m; sourceTree = "<group>"; };
-		9EAB2F521DC1950A0024456D /* MovieFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFilterViewController.h; sourceTree = "<group>"; };
-		9EAB2F531DC1950A0024456D /* MovieFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFilterViewController.m; sourceTree = "<group>"; };
 		9EAB2F551DC198560024456D /* LiveCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveCameraViewController.h; sourceTree = "<group>"; };
 		9EAB2F561DC198560024456D /* LiveCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveCameraViewController.m; sourceTree = "<group>"; };
-		9EAB2F571DC198560024456D /* MovieFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieFilterViewController.xib; sourceTree = "<group>"; };
+		9EAB2F611DC1CD170024456D /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
+		9EAB2F621DC1CD170024456D /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
+		9EAB2F631DC1CD170024456D /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,7 +721,7 @@
 		9EAB2A6D1DBEF5870024456D /* GPUImage_demo */ = {
 			isa = PBXGroup;
 			children = (
-				9EAB2CDB1DBEFF0C0024456D /* ios.png */,
+				9EAB2CDB1DBEFF0C0024456D /* iOS.png */,
 				9EAB2A711DBEF5870024456D /* AppDelegate.h */,
 				9EAB2A721DBEF5870024456D /* AppDelegate.m */,
 				9EAB2A741DBEF5870024456D /* ViewController.h */,
@@ -730,9 +730,9 @@
 				9EAB2F4D1DC0816F0024456D /* GPUImageBeautifyFilter.m */,
 				9EAB2F4F1DC193B30024456D /* PictureFilterViewController.h */,
 				9EAB2F501DC193B30024456D /* PictureFilterViewController.m */,
-				9EAB2F521DC1950A0024456D /* MovieFilterViewController.h */,
-				9EAB2F531DC1950A0024456D /* MovieFilterViewController.m */,
-				9EAB2F571DC198560024456D /* MovieFilterViewController.xib */,
+				9EAB2F611DC1CD170024456D /* MovieViewController.h */,
+				9EAB2F621DC1CD170024456D /* MovieViewController.m */,
+				9EAB2F631DC1CD170024456D /* MovieViewController.xib */,
 				9EAB2F551DC198560024456D /* LiveCameraViewController.h */,
 				9EAB2F561DC198560024456D /* LiveCameraViewController.m */,
 				9EAB2A771DBEF5870024456D /* Main.storyboard */,
@@ -1309,12 +1309,12 @@
 				9EAB2A7B1DBEF5870024456D /* Assets.xcassets in Resources */,
 				9EAB2E831DBF05030024456D /* lookup.png in Resources */,
 				9EAB2E841DBF05030024456D /* lookup_amatorka.png in Resources */,
-				9EAB2CDC1DBEFF0C0024456D /* ios.png in Resources */,
+				9EAB2CDC1DBEFF0C0024456D /* iOS.png in Resources */,
+				9EAB2F651DC1CD170024456D /* MovieViewController.xib in Resources */,
 				9EAB2E871DBF05030024456D /* lookup_soft_elegance_2.png in Resources */,
 				9EAB2E861DBF05030024456D /* lookup_soft_elegance_1.png in Resources */,
 				9EAB2F4B1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 in Resources */,
 				9EAB2A791DBEF5870024456D /* Main.storyboard in Resources */,
-				9EAB2F591DC198560024456D /* MovieFilterViewController.xib in Resources */,
 				9EAB2F301DBF05040024456D /* Info.plist in Resources */,
 				9EAB2E851DBF05030024456D /* lookup_miss_etikate.png in Resources */,
 			);
@@ -1442,7 +1442,6 @@
 				9EAB2F311DBF05040024456D /* GPUImageContext.m in Sources */,
 				9EAB2F001DBF05040024456D /* GPUImageRGBErosionFilter.m in Sources */,
 				9EAB2ED41DBF05040024456D /* GPUImageLanczosResamplingFilter.m in Sources */,
-				9EAB2F541DC1950A0024456D /* MovieFilterViewController.m in Sources */,
 				9EAB2E901DBF05030024456D /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				9EAB2F1B1DBF05040024456D /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				9EAB2ECA1DBF05040024456D /* GPUImageHistogramFilter.m in Sources */,
@@ -1485,6 +1484,7 @@
 				9EAB2EAA1DBF05030024456D /* GPUImageDifferenceBlendFilter.m in Sources */,
 				9EAB2EBC1DBF05030024456D /* GPUImageGammaFilter.m in Sources */,
 				9EAB2F2E1DBF05040024456D /* GPUImageXYDerivativeFilter.m in Sources */,
+				9EAB2F641DC1CD170024456D /* MovieViewController.m in Sources */,
 				9EAB2EA01DBF05030024456D /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
 				9EAB2E981DBF05030024456D /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				9EAB2EDA1DBF05040024456D /* GPUImageLocalBinaryPatternFilter.m in Sources */,

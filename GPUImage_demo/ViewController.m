@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #import "PictureFilterViewController.h"
-#import "MovieFilterViewController.h"
+#import "MovieViewController.h"
 #import "LiveCameraViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -53,7 +53,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PictureFilterViewController *picVC = [PictureFilterViewController new];
-    MovieFilterViewController *movVC = [MovieFilterViewController new];
+    MovieViewController *movVC = [MovieViewController new];
     LiveCameraViewController *liveVC = [LiveCameraViewController new];
     
     if (indexPath.row == 0) {

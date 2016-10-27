@@ -6,9 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieFilterViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieViewController">
             <connections>
-                <outlet property="gpuImageView" destination="kpH-GE-61x" id="CFQ-bR-lgi"/>
+                <outlet property="gpuImageView" destination="tpW-d1-b7i" id="tD3-Rx-0zI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,17 +17,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpH-GE-61x" customClass="GPUImageView">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-d1-b7i" customClass="GPUImageView">
                     <rect key="frame" x="0.0" y="81" width="600" height="438"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="kpH-GE-61x" secondAttribute="height" multiplier="100:73" id="jrP-NL-MF0"/>
+                        <constraint firstAttribute="width" secondItem="tpW-d1-b7i" secondAttribute="height" multiplier="100:73" id="8rj-2d-4Tg"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kpH-GE-61x" firstAttribute="width" secondItem="kpH-GE-61x" secondAttribute="height" multiplier="100:73" id="vrM-AF-8KY"/>
+                <constraint firstItem="tpW-d1-b7i" firstAttribute="width" secondItem="tpW-d1-b7i" secondAttribute="height" multiplier="100:73" id="2vV-bJ-Kcj"/>
+                <constraint firstItem="tpW-d1-b7i" firstAttribute="width" secondItem="tpW-d1-b7i" secondAttribute="height" multiplier="100:73" id="jKd-Ps-hE2"/>
             </constraints>
         </view>
     </objects>

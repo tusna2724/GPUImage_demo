@@ -1,24 +1,22 @@
 //
-//  MovieFilterViewController.m
+//  MovieViewController.m
 //  GPUImage_demo
 //
 //  Created by tusna2724 on 16/10/27.
 //  Copyright © 2016年 XGY. All rights reserved.
 //
 
-#import "MovieFilterViewController.h"
+#import "MovieViewController.h"
 #import "GPUImage.h"
 
-@interface MovieFilterViewController () <GPUImageMovieDelegate>
-//@property (weak, nonatomic)IBOutlet GPUImageView *gpuImageView;
-
-@property (strong, nonatomic) GPUImageView *gpuImageView;
+@interface MovieViewController () <GPUImageMovieDelegate>
+@property (weak, nonatomic) IBOutlet GPUImageView *gpuImageView;
 
 @property (nonatomic, strong) GPUImageMovie *movie;
 
 @end
 
-@implementation MovieFilterViewController
+@implementation MovieViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,15 +65,16 @@
     /**
      *  添加卡通滤镜
      */
-        GPUImageToonFilter *filter = [GPUImageToonFilter new];//胶片效果
+    GPUImageToonFilter *filter = [GPUImageToonFilter new];//胶片效果
     //    GPUImageSharpenFilter *filter = [GPUImageSharpenFilter new];
-//    GPUImageThresholdedNonMaximumSuppressionFilter *filter = [GPUImageThresholdedNonMaximumSuppressionFilter new];
+    //    GPUImageThresholdedNonMaximumSuppressionFilter *filter = [GPUImageThresholdedNonMaximumSuppressionFilter new];
     [_movie addTarget:filter];
     
     /**
      *  添加显示视图
      */
-    self.gpuImageView = [GPUImageView new];
+//    self.gpuImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
+//    [self.view addSubview:self.gpuImageView];
     [filter addTarget:self.gpuImageView];
     
     /**
@@ -86,15 +85,15 @@
     [_movie startProcessing];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)didCompletePlayingMovie {
     NSLog(@"已完成播放");
 }
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 /*
 #pragma mark - Navigation
