@@ -1765,6 +1765,7 @@
 				9EAB2A9A1DBEF5880024456D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EAB2A9B1DBEF5880024456D /* Build configuration list for PBXNativeTarget "GPUImage_demoTests" */ = {
 			isa = XCConfigurationList;
@@ -1773,6 +1774,7 @@
 				9EAB2A9D1DBEF5880024456D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EAB2A9E1DBEF5880024456D /* Build configuration list for PBXNativeTarget "GPUImage_demoUITests" */ = {
 			isa = XCConfigurationList;
@@ -1781,6 +1783,7 @@
 				9EAB2AA01DBEF5880024456D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

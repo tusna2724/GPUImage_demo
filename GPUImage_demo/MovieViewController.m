@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) GPUImageMovie *movie;
 
+@property (nonatomic, strong) AVPlayerItem *playerItem;
 @end
 
 @implementation MovieViewController
@@ -31,11 +32,44 @@
     NSString *str = [[NSBundle mainBundle] pathForResource:@"Bruno Mars - SNL Second Song" ofType:@"MP4"];
     NSURL *sampleURL = [NSURL fileURLWithPath:str];
     
+    
+    AVAsset *asset = [AVAsset assetWithURL:sampleURL];
+    NSLog(@"asset : %@", asset);
+
+    AVAssetTrack *videoAssetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];//素材的视频轨
+    AVAssetTrack *audioAssertTrack = [[asset tracksWithMediaType:AVMediaTypeAudio]objectAtIndex:0];//素材的音频轨
+    NSLog(@"\n %@ \n %@", videoAssetTrack, audioAssertTrack);
+    
+
+//    AVMutableComposition *composition = [AVMutableComposition composition];//这是工程文件
+//    AVMutableCompositionTrack *videoCompositionTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo
+//                                                                                preferredTrackID:kCMPersistentTrackID_Invalid]; //视频轨道
+//    [videoCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAssetTrack.timeRange.duration)
+//                                   ofTrack:videoAssetTrack
+//                                    atTime:kCMTimeZero error:nil];//在视频轨道插入一个时间段的视频
+
+
     /**
      *  初始化 movie
      */
-    _movie = [[GPUImageMovie alloc] initWithURL:sampleURL];
-    
+//    _movie = [[GPUImageMovie alloc] initWithURL:sampleURL];
+    _movie = [[GPUImageMovie alloc] initWithPlayerItem:_movie.playerItem]; //这样调用可以有声音有视频，但是发现不能用writer 方法存起来。
+    _movie.playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+    NSLog(@"_movie.playerItem : %@", _movie.playerItem);
+
+    //    AVMutableCompositionTrack *audioCompositionTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio
+    //                                                                                preferredTrackID:kCMPersistentTrackID_Invalid];//音频轨道
+    //    [audioCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAssetTrack.timeRange.duration)
+    //                                   ofTrack:audioAssertTrack
+    //                                    atTime:kCMTimeZero
+    //                                     error:nil];//插入音频数据，否则没有声音
+    _movie.playerItem = [[AVPlayerItem alloc] initWithURL:sampleURL];
+    AVPlayer *player = [AVPlayer playerWithPlayerItem:_movie.playerItem];
+    //    [_movie addTarget:filterView];
+    _movie.playAtActualSpeed = YES;
+    _movie.shouldRepeat = true;
+
+
     /**
      *  是否重复播放
      */
@@ -52,7 +86,7 @@
      *  设置代理 GPUImageMovieDelegate，只有一个方法 didCompletePlayingMovie
      */
     _movie.delegate = self;
-    
+
     /**
      *  This enables the benchmarking mode, which logs out instantaneous and average frame times to the console
      *
@@ -61,7 +95,7 @@
      *  每隔一段时间打印： Current frame time : 51.256001 ms，直到播放或加滤镜等操作完毕
      */
     _movie.runBenchmark = YES;
-    
+
     /**
      *  添加卡通滤镜
      */
@@ -69,14 +103,13 @@
     //    GPUImageSharpenFilter *filter = [GPUImageSharpenFilter new];
     //    GPUImageThresholdedNonMaximumSuppressionFilter *filter = [GPUImageThresholdedNonMaximumSuppressionFilter new];
     [_movie addTarget:filter];
-    
+
     /**
      *  添加显示视图
      */
-//    self.gpuImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height)];
-//    [self.view addSubview:self.gpuImageView];
     [filter addTarget:self.gpuImageView];
-    
+
+
     /**
      *  视频处理后输出到 GPUImageView 预览时不支持播放声音，需要自行添加声音播放功能
      *

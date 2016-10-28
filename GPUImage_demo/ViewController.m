@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.firstArr = @[@"图片加滤镜", @"本地视频加滤镜", @"直播美颜"];
+    self.firstArr = @[@"图片加滤镜", @"本地视频加滤镜", @"直播(前后)美颜"];
     [self createTableView];
 }
 

@@ -11,7 +11,7 @@
 #import "GPUImage.h"
 
 @interface PictureFilterViewController ()
-
+@property (nonatomic, strong) UIImage *afterImg;
 @end
 
 @implementation PictureFilterViewController
@@ -22,6 +22,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
 #pragma mark - 1. 图片+滤镜
+    
+    NSURL *imgURL = [NSURL URLWithString:@"http://img.bizhi.sogou.com/images/2013/07/17/346898.jpg"];
+//    NSData *data = [NSData dataWithContentsOfURL:imgURL];
+    
     UIImage *image = [UIImage imageNamed:@"iOS"];
     
     //    GPUImageGammaFilter *stretchDis = [GPUImageGammaFilter new]; // 伽马
@@ -38,16 +42,37 @@
     [pic addTarget:stretchDis];
     // 渲染
     [pic processImage];
-    
+
     // 获取滤镜后的image
-    UIImage *afterImg = [stretchDis imageFromCurrentFramebuffer];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:afterImg];
-    imageView.frame = CGRectMake(100, 100, 200, 300);
+    self.afterImg = [stretchDis imageFromCurrentFramebuffer];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.afterImg];
+    imageView.frame = CGRectMake(30, 100, 370, 550);
     
     [self.view addSubview:imageView];
 
 
+    
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"保存"
+                                                            style:UIBarButtonItemStyleDone target:self
+                                                           action:@selector(save:)];
+    self.navigationItem.rightBarButtonItem = btn;
 }
+
+- (void)save:(UIButton *)btn {
+    UIImageWriteToSavedPhotosAlbum(self.afterImg, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    NSString *message = @"呵呵";
+    if (!error) {
+        message = @"成功保存到相册";
+    }else
+    {
+        message = [error description];
+    }
+    NSLog(@"message is %@",message);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
