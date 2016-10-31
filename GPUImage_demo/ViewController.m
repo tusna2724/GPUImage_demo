@@ -11,6 +11,7 @@
 #import "PictureFilterViewController.h"
 #import "MovieViewController.h"
 #import "LiveCameraViewController.h"
+#import "VedioFilterViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -25,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.firstArr = @[@"图片加滤镜", @"本地视频加滤镜", @"直播(前后)美颜"];
+    self.firstArr = @[@"图片加滤镜", @"本地视频加滤镜", @"直播(前后)美颜", @"录制(美颜)"];
     [self createTableView];
 }
 
@@ -55,13 +56,16 @@
     PictureFilterViewController *picVC = [PictureFilterViewController new];
     MovieViewController *movVC = [MovieViewController new];
     LiveCameraViewController *liveVC = [LiveCameraViewController new];
+    VedioFilterViewController *vedioVC = [VedioFilterViewController new];
     
     if (indexPath.row == 0) {
         [self.navigationController pushViewController:picVC animated:YES];
     } else if (indexPath.row == 1) {
         [self.navigationController pushViewController:movVC animated:YES];
-    } else {
+    } else if (indexPath.row == 2){
         [self.navigationController pushViewController:liveVC animated:YES];
+    } else {
+        [self.navigationController pushViewController:vedioVC animated:YES];
     }
 }
 

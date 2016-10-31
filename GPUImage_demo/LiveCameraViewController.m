@@ -17,6 +17,7 @@
 @property (nonatomic, strong) GPUImageView *filterView;
 @property (nonatomic, strong) UIButton *beautifyButton;
 
+@property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
 @end
 
 @implementation LiveCameraViewController
@@ -52,16 +53,24 @@
 
 - (void)beautify {
     if (self.beautifyButton.selected) {
+        //点关闭
         self.beautifyButton.selected = NO;
         [self.videoCamera removeAllTargets];
         [self.videoCamera addTarget:self.filterView];
+//        UISaveVideoAtPathToSavedPhotosAlbum(NSString *videoPath, __nullable id completionTarget, __nullable SEL completionSelector, void * __nullable contextInfo)
+//        UISaveVideoAtPathToSavedPhotosAlbum()
     } else {
+        //点打开
         self.beautifyButton.selected = YES;
         [self.videoCamera removeAllTargets];
         GPUImageBeautifyFilter *beautifyFilter = [GPUImageBeautifyFilter new];
         [self.videoCamera addTarget:beautifyFilter];
         [beautifyFilter addTarget:self.filterView];
     }
+}
+
+- (void)startVedio {
+//    _movieWriter = [GPUImageMovieWriter alloc] initWithMovieURL:<#(NSURL *)#> size:<#(CGSize)#>
 }
 
 

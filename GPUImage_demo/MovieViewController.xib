@@ -3,12 +3,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9531"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieViewController">
             <connections>
-                <outlet property="gpuImageView" destination="tpW-d1-b7i" id="tD3-Rx-0zI"/>
+                <outlet property="gpuImageView" destination="Moi-hz-m0S" id="Adz-qv-0J0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,19 +16,40 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpW-d1-b7i" customClass="GPUImageView">
-                    <rect key="frame" x="0.0" y="81" width="600" height="438"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Moi-hz-m0S" customClass="GPUImageView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="tpW-d1-b7i" secondAttribute="height" multiplier="100:73" id="8rj-2d-4Tg"/>
-                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="tpW-d1-b7i" firstAttribute="width" secondItem="tpW-d1-b7i" secondAttribute="height" multiplier="100:73" id="2vV-bJ-Kcj"/>
-                <constraint firstItem="tpW-d1-b7i" firstAttribute="width" secondItem="tpW-d1-b7i" secondAttribute="height" multiplier="100:73" id="jKd-Ps-hE2"/>
+                <constraint firstAttribute="trailing" secondItem="Moi-hz-m0S" secondAttribute="trailing" constant="30" id="2TF-7y-pcc"/>
+                <constraint firstItem="Moi-hz-m0S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="CDX-ek-lGT"/>
+                <constraint firstAttribute="bottom" secondItem="Moi-hz-m0S" secondAttribute="bottom" constant="201" id="ieG-IP-QYk"/>
+                <constraint firstItem="Moi-hz-m0S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="31" id="xzo-17-cbw"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Moi-hz-m0S"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="2TF-7y-pcc"/>
+                    <exclude reference="CDX-ek-lGT"/>
+                    <exclude reference="ieG-IP-QYk"/>
+                    <exclude reference="xzo-17-cbw"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Moi-hz-m0S"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="2TF-7y-pcc"/>
+                    <include reference="CDX-ek-lGT"/>
+                    <include reference="ieG-IP-QYk"/>
+                    <include reference="xzo-17-cbw"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

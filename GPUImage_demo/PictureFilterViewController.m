@@ -62,8 +62,11 @@
     UIImageWriteToSavedPhotosAlbum(self.afterImg, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
 }
 
-- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    NSString *message = @"呵呵";
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image
+       didFinishSavingWithError:(NSError *)error
+                    contextInfo:(void *)contextInfo {
+    NSString *message = @"保存图片到相册";
     if (!error) {
         message = @"成功保存到相册";
     }else

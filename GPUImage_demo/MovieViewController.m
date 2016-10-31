@@ -52,10 +52,10 @@
     /**
      *  初始化 movie
      */
-//    _movie = [[GPUImageMovie alloc] initWithURL:sampleURL];
-    _movie = [[GPUImageMovie alloc] initWithPlayerItem:_movie.playerItem]; //这样调用可以有声音有视频，但是发现不能用writer 方法存起来。
-    _movie.playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
-    NSLog(@"_movie.playerItem : %@", _movie.playerItem);
+    _movie = [[GPUImageMovie alloc] initWithURL:sampleURL];
+//    _movie = [[GPUImageMovie alloc] initWithPlayerItem:_movie.playerItem]; //这样调用可以有声音有视频，但是发现不能用writer 方法存起来。
+//    _movie.playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+//    NSLog(@"_movie.playerItem : %@", _movie.playerItem);
 
     //    AVMutableCompositionTrack *audioCompositionTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio
     //                                                                                preferredTrackID:kCMPersistentTrackID_Invalid];//音频轨道
@@ -63,11 +63,11 @@
     //                                   ofTrack:audioAssertTrack
     //                                    atTime:kCMTimeZero
     //                                     error:nil];//插入音频数据，否则没有声音
-    _movie.playerItem = [[AVPlayerItem alloc] initWithURL:sampleURL];
-    AVPlayer *player = [AVPlayer playerWithPlayerItem:_movie.playerItem];
-    //    [_movie addTarget:filterView];
-    _movie.playAtActualSpeed = YES;
-    _movie.shouldRepeat = true;
+//    _movie.playerItem = [[AVPlayerItem alloc] initWithURL:sampleURL];
+//    AVPlayer *player = [AVPlayer playerWithPlayerItem:_movie.playerItem];
+//    //    [_movie addTarget:filterView];
+//    _movie.playAtActualSpeed = YES;
+//    _movie.shouldRepeat = true;
 
 
     /**

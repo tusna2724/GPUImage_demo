@@ -209,6 +209,7 @@
 		9EAB2F581DC198560024456D /* LiveCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F561DC198560024456D /* LiveCameraViewController.m */; };
 		9EAB2F641DC1CD170024456D /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F621DC1CD170024456D /* MovieViewController.m */; };
 		9EAB2F651DC1CD170024456D /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2F631DC1CD170024456D /* MovieViewController.xib */; };
+		9ED07A5A1DC2F9EA0082762B /* VedioFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -655,6 +656,8 @@
 		9EAB2F611DC1CD170024456D /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		9EAB2F621DC1CD170024456D /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		9EAB2F631DC1CD170024456D /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
+		9ED07A571DC2F9EA0082762B /* VedioFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioFilterViewController.h; sourceTree = "<group>"; };
+		9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioFilterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -735,6 +738,8 @@
 				9EAB2F631DC1CD170024456D /* MovieViewController.xib */,
 				9EAB2F551DC198560024456D /* LiveCameraViewController.h */,
 				9EAB2F561DC198560024456D /* LiveCameraViewController.m */,
+				9ED07A571DC2F9EA0082762B /* VedioFilterViewController.h */,
+				9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */,
 				9EAB2A771DBEF5870024456D /* Main.storyboard */,
 				9EAB2A7A1DBEF5870024456D /* Assets.xcassets */,
 				9EAB2A7C1DBEF5870024456D /* LaunchScreen.storyboard */,
@@ -1400,6 +1405,7 @@
 				9EAB2EC61DBF05040024456D /* GPUImageHighlightShadowFilter.m in Sources */,
 				9EAB2EC31DBF05030024456D /* GPUImageHardLightBlendFilter.m in Sources */,
 				9EAB2E9B1DBF05030024456D /* GPUImageColorBlendFilter.m in Sources */,
+				9ED07A5A1DC2F9EA0082762B /* VedioFilterViewController.m in Sources */,
 				9EAB2F131DBF05040024456D /* GPUImageSphereRefractionFilter.m in Sources */,
 				9EAB2EC01DBF05030024456D /* GPUImageGlassSphereFilter.m in Sources */,
 				9EAB2EF61DBF05040024456D /* GPUImagePixellatePositionFilter.m in Sources */,
