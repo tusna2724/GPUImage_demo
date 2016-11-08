@@ -70,7 +70,6 @@
     [self.recBtn sizeToFit];
     [self.recBtn addTarget:self action:@selector(record:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:self.recBtn];
-
 }
 
 
@@ -98,7 +97,6 @@
     if ([sender.currentTitle isEqualToString:@"录制"]) {
         [sender setTitle:@"结束" forState:UIControlStateNormal];
         NSLog(@"start record");
-
 
         unlink([pathToMovie UTF8String]);
         _movieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:url size:CGSizeMake(480.0, 640.0)];

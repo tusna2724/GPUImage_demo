@@ -30,7 +30,7 @@
      */
     
     //    NSURL *sampleURL = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"mp4" subdirectory:nil];
-    NSString *str = [[NSBundle mainBundle] pathForResource:@"《GONE HOME》20分钟100%攻略" ofType:@"mp4"];
+    NSString *str = [[NSBundle mainBundle] pathForResource:@"keep" ofType:@"mp4"];
     NSURL *sampleURL = [NSURL fileURLWithPath:str];
 
 
@@ -41,11 +41,11 @@
     NSLog(@"----------------------------------------------------------------------");
     
     
-    AVAssetTrack *videoAssetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];//素材的视频轨
-    AVAssetTrack *audioAssertTrack = [[asset tracksWithMediaType:AVMediaTypeAudio]objectAtIndex:0];//素材的音频轨
-    NSLog(@"视频轨 : %@ \n--------------------------\n音轨 : %@",
-          [videoAssetTrack.formatDescriptions lastObject],
-          [audioAssertTrack.formatDescriptions lastObject]);
+//    AVAssetTrack *videoAssetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];//素材的视频轨
+//    AVAssetTrack *audioAssertTrack = [[asset tracksWithMediaType:AVMediaTypeAudio]objectAtIndex:0];//素材的音频轨
+//    NSLog(@"视频轨 : %@ \n--------------------------\n音轨 : %@",
+//          [videoAssetTrack.formatDescriptions lastObject],
+//          [audioAssertTrack.formatDescriptions lastObject]);
 
 
 
@@ -56,14 +56,14 @@
 
     // 2 - Video track
     //创建一个轨道,类型是AVMediaTypeAudio
-    AVMutableCompositionTrack *firstTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
-                                                                        preferredTrackID:kCMPersistentTrackID_Invalid];
+//    AVMutableCompositionTrack *firstTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
+//                                                                        preferredTrackID:kCMPersistentTrackID_Invalid];
 
-    //获取firstAsset中的音频,插入轨道
-    [firstTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
-                        ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0]
-                         atTime:kCMTimeZero
-                          error:nil];
+//    //获取firstAsset中的音频,插入轨道
+//    [firstTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
+//                        ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0]
+//                         atTime:kCMTimeZero
+//                          error:nil];
 
 #pragma mark - video
     AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo
@@ -86,7 +86,6 @@
     //创建输出对象
     AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:mixComposition
                                                                       presetName:AVAssetExportPresetMediumQuality];
-
     NSString *vedioName = @"demo.mp4";
     NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:vedioName];
 //    NSURL *url = [NSURL fileURLWithPath:exportPath];
@@ -113,12 +112,12 @@
      *  设为YES，则会根据视频本身时长计算出每帧的时间间隔，然后每渲染一帧，就sleep一个时间间隔，从而达到正常的播放速度。
      */
     _movie.playAtActualSpeed = YES;
-    
+
     /**
      *  设置代理 GPUImageMovieDelegate，只有一个方法 didCompletePlayingMovie
      */
     _movie.delegate = self;
-    
+
     /**
      *  This enables the benchmarking mode, which logs out instantaneous and average frame times to the console
      *
@@ -127,7 +126,7 @@
      *  每隔一段时间打印： Current frame time : 51.256001 ms，直到播放或加滤镜等操作完毕
      */
     _movie.runBenchmark = YES;
-    
+
     /**
      *  添加卡通滤镜
      */
@@ -135,12 +134,12 @@
     GPUImageSharpenFilter *filter = [GPUImageSharpenFilter new];
     //    GPUImageThresholdedNonMaximumSuppressionFilter *filter = [GPUImageThresholdedNonMaximumSuppressionFilter new];
     [_movie addTarget:filter];
-    
+
     /**
      *  添加显示视图
      */
     [filter addTarget:self.gpuImageView];
-    
+
     /**
      *  视频处理后输出到 GPUImageView 预览时不支持播放声音，需要自行添加声音播放功能
      *
@@ -149,8 +148,7 @@
 //    [_movie startProcessing];
 
 
-    if ([[NSFileManager defaultManager] fileExistsAtPath:exportPath])
-    {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:exportPath]) {
         // 调用播放方法
         [self playAudio:[NSURL fileURLWithPath:exportPath]];
     } else {
@@ -164,26 +162,25 @@
 
     }];
 
-#pragma mark ---------------------------------------------------------------------------------------------------------------------------
+#pragma mark ------------------------------------------------------------------------------------------------------------------------
 
 }
 
 - (void)playAudio:(NSURL *)url {
-//    // 传入地址
-//    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
-//    // 播放器
-//    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
-//    // 播放器layer
-//    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
-//    playerLayer.frame = self.view.frame;
-//    // 视频填充模式
-//    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-//    // 添加到imageview的layer上
-//    [self.view.layer addSublayer:playerLayer];
-//    // 隐藏提示框 开始播放
-//    // 播放
-//    [player play];
-    
+    // 传入地址
+    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
+    // 播放器
+    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+    // 播放器layer
+    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
+    playerLayer.frame = self.view.frame;
+    // 视频填充模式
+    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+    // 添加到imageview的layer上
+    [self.view.layer addSublayer:playerLayer];
+    // 隐藏提示框 开始播放
+    // 播放
+    [player play];
 
 }
 
