@@ -195,22 +195,6 @@
 }
 
 
--(void)exportDidFinish:(AVAssetExportSession*)session {
-    NSLog(@"%ld",session.status);
-    if (session.status == AVAssetExportSessionStatusCompleted) {
-        NSURL *outputURL = session.outputURL;
-        
-//        MPMoviePlayerViewController *theMovie = [[MPMoviePlayerViewController alloc] initWithContentURL:outputURL];
-//
-//        [self presentMoviePlayerViewControllerAnimated:theMovie];
-
-    }
-//    audioAsset = nil;
-//    firstAsset = nil;
-//    secondAsset = nil;
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
