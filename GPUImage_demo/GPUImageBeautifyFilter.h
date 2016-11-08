@@ -15,8 +15,10 @@
     GPUImageBilateralFilter *bilateralFilter;        // 美颜
 //    GPUImageStretchDistortionFilter *bilateralFilter; // 拉伸变形
 //    GPUImageAverageLuminanceThresholdFilter *bilateralFilter; // 平均亮度阈值
-    GPUImageCannyEdgeDetectionFilter *cannyEdgeFilter;
-    GPUImageCombinationFilter *combinationFilter;
+    GPUImageColorInvertFilter *colorInvert;         //反色
+    GPUImageSepiaFilter *sepia;     //怀旧
+    GPUImageCannyEdgeDetectionFilter *cannyEdgeFilter; // 边缘检测
+    GPUImageCombinationFilter *combinationFilter;// 组合
     GPUImageHSBFilter *hsbFilter;
 }
 @end

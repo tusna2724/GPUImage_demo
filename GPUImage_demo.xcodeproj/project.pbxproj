@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3921A81DD0514E0012BAB7 /* keep.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3921A71DD0514E0012BAB7 /* keep.mp4 */; };
+		9E3921AC1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3921AB1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 */; };
 		9EAB2A701DBEF5870024456D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2A6F1DBEF5870024456D /* main.m */; };
 		9EAB2A731DBEF5870024456D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2A721DBEF5870024456D /* AppDelegate.m */; };
 		9EAB2A761DBEF5870024456D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2A751DBEF5870024456D /* ViewController.m */; };
@@ -203,12 +205,12 @@
 		9EAB2F331DBF05040024456D /* GPUImagePicture+TextureSubimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2E6E1DBF05030024456D /* GPUImagePicture+TextureSubimage.m */; };
 		9EAB2F341DBF05040024456D /* GPUImagePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2E701DBF05030024456D /* GPUImagePicture.m */; };
 		9EAB2F351DBF05040024456D /* GPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2E721DBF05030024456D /* GPUImageView.m */; };
-		9EAB2F4B1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2F4A1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 */; };
 		9EAB2F4E1DC0816F0024456D /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F4D1DC0816F0024456D /* GPUImageBeautifyFilter.m */; };
 		9EAB2F511DC193B30024456D /* PictureFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F501DC193B30024456D /* PictureFilterViewController.m */; };
 		9EAB2F581DC198560024456D /* LiveCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F561DC198560024456D /* LiveCameraViewController.m */; };
 		9EAB2F641DC1CD170024456D /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2F621DC1CD170024456D /* MovieViewController.m */; };
 		9EAB2F651DC1CD170024456D /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB2F631DC1CD170024456D /* MovieViewController.xib */; };
+		9ECB80A11DD018E400922807 /* VideoMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ECB80A01DD018E400922807 /* VideoMusicViewController.m */; };
 		9ED07A5A1DC2F9EA0082762B /* VedioFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -264,6 +266,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E3921A71DD0514E0012BAB7 /* keep.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = keep.mp4; path = "../../../../Downloads/KeepGuidePage-master/KeepGuidePage/keep.mp4"; sourceTree = "<group>"; };
+		9E3921AB1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "莫文蔚 - 阴天.mp3"; path = "../../../../Music/网易云音乐/莫文蔚 - 阴天.mp3"; sourceTree = "<group>"; };
 		9EAB2A6B1DBEF5870024456D /* GPUImage_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImage_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAB2A6F1DBEF5870024456D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9EAB2A711DBEF5870024456D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -646,7 +650,6 @@
 		9EAB2E701DBF05030024456D /* GPUImagePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImagePicture.m; sourceTree = "<group>"; };
 		9EAB2E711DBF05030024456D /* GPUImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageView.h; sourceTree = "<group>"; };
 		9EAB2E721DBF05030024456D /* GPUImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageView.m; sourceTree = "<group>"; };
-		9EAB2F4A1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bruno Mars - SNL Second Song.MP4"; path = "../../../../Movies/Bruno Mars - SNL Second Song.MP4"; sourceTree = "<group>"; };
 		9EAB2F4C1DC0816F0024456D /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 		9EAB2F4D1DC0816F0024456D /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		9EAB2F4F1DC193B30024456D /* PictureFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureFilterViewController.h; sourceTree = "<group>"; };
@@ -656,6 +659,8 @@
 		9EAB2F611DC1CD170024456D /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		9EAB2F621DC1CD170024456D /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		9EAB2F631DC1CD170024456D /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
+		9ECB809F1DD018E400922807 /* VideoMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoMusicViewController.h; sourceTree = "<group>"; };
+		9ECB80A01DD018E400922807 /* VideoMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoMusicViewController.m; sourceTree = "<group>"; };
 		9ED07A571DC2F9EA0082762B /* VedioFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioFilterViewController.h; sourceTree = "<group>"; };
 		9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioFilterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -740,11 +745,14 @@
 				9EAB2F561DC198560024456D /* LiveCameraViewController.m */,
 				9ED07A571DC2F9EA0082762B /* VedioFilterViewController.h */,
 				9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */,
+				9ECB809F1DD018E400922807 /* VideoMusicViewController.h */,
+				9ECB80A01DD018E400922807 /* VideoMusicViewController.m */,
+				9E3921AB1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 */,
+				9E3921A71DD0514E0012BAB7 /* keep.mp4 */,
 				9EAB2A771DBEF5870024456D /* Main.storyboard */,
 				9EAB2A7A1DBEF5870024456D /* Assets.xcassets */,
 				9EAB2A7C1DBEF5870024456D /* LaunchScreen.storyboard */,
 				9EAB2A7F1DBEF5870024456D /* Info.plist */,
-				9EAB2F4A1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 */,
 				9EAB2D041DBF05020024456D /* framework */,
 				9EAB2A6E1DBEF5870024456D /* Supporting Files */,
 			);
@@ -1310,15 +1318,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3921AC1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 in Resources */,
 				9EAB2A7E1DBEF5870024456D /* LaunchScreen.storyboard in Resources */,
 				9EAB2A7B1DBEF5870024456D /* Assets.xcassets in Resources */,
+				9E3921A81DD0514E0012BAB7 /* keep.mp4 in Resources */,
 				9EAB2E831DBF05030024456D /* lookup.png in Resources */,
 				9EAB2E841DBF05030024456D /* lookup_amatorka.png in Resources */,
 				9EAB2CDC1DBEFF0C0024456D /* iOS.png in Resources */,
 				9EAB2F651DC1CD170024456D /* MovieViewController.xib in Resources */,
 				9EAB2E871DBF05030024456D /* lookup_soft_elegance_2.png in Resources */,
 				9EAB2E861DBF05030024456D /* lookup_soft_elegance_1.png in Resources */,
-				9EAB2F4B1DBF2C8A0024456D /* Bruno Mars - SNL Second Song.MP4 in Resources */,
 				9EAB2A791DBEF5870024456D /* Main.storyboard in Resources */,
 				9EAB2F301DBF05040024456D /* Info.plist in Resources */,
 				9EAB2E851DBF05030024456D /* lookup_miss_etikate.png in Resources */,
@@ -1512,6 +1521,7 @@
 				9EAB2ED31DBF05040024456D /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				9EAB2F141DBF05040024456D /* GPUImageStillCamera.m in Sources */,
 				9EAB2EEA1DBF05040024456D /* GPUImageMultiplyBlendFilter.m in Sources */,
+				9ECB80A11DD018E400922807 /* VideoMusicViewController.m in Sources */,
 				9EAB2EAC1DBF05030024456D /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				9EAB2EF71DBF05040024456D /* GPUImagePoissonBlendFilter.m in Sources */,
 				9EAB2ED01DBF05040024456D /* GPUImageiOSBlurFilter.m in Sources */,
@@ -1674,6 +1684,7 @@
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "$(PROJECT)/framework/Source/**";
 				INFOPLIST_FILE = GPUImage_demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1693,6 +1704,7 @@
 				GCC_PREFIX_HEADER = "";
 				HEADER_SEARCH_PATHS = "$(PROJECT)/framework/Source/**";
 				INFOPLIST_FILE = GPUImage_demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -23,7 +23,7 @@
     
 #pragma mark - 1. 图片+滤镜
     
-    NSURL *imgURL = [NSURL URLWithString:@"http://img.bizhi.sogou.com/images/2013/07/17/346898.jpg"];
+//    NSURL *imgURL = [NSURL URLWithString:@"http://img.bizhi.sogou.com/images/2013/07/17/346898.jpg"];
 //    NSData *data = [NSData dataWithContentsOfURL:imgURL];
     
     UIImage *image = [UIImage imageNamed:@"iOS"];
@@ -50,8 +50,6 @@
     
     [self.view addSubview:imageView];
 
-
-    
     UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithTitle:@"保存"
                                                             style:UIBarButtonItemStyleDone target:self
                                                            action:@selector(save:)];
@@ -69,8 +67,7 @@
     NSString *message = @"保存图片到相册";
     if (!error) {
         message = @"成功保存到相册";
-    }else
-    {
+    } else {
         message = [error description];
     }
     NSLog(@"message is %@",message);

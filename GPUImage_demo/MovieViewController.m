@@ -28,48 +28,80 @@
      *
      *  http://tx2.a.yximgs.com/upic/2016/07/01/21/BMjAxNjA3MDEyMTM4MjhfNzIwMjExNF84NTc1MTQ1NjJfMl8z.mp4?tag=1-1467534669-w-0-25bdx25jov-5a63ad5ba6299f84
      */
+    
     //    NSURL *sampleURL = [[NSBundle mainBundle] URLForResource:@"demo" withExtension:@"mp4" subdirectory:nil];
-    NSString *str = [[NSBundle mainBundle] pathForResource:@"Bruno Mars - SNL Second Song" ofType:@"MP4"];
+    NSString *str = [[NSBundle mainBundle] pathForResource:@"《GONE HOME》20分钟100%攻略" ofType:@"mp4"];
     NSURL *sampleURL = [NSURL fileURLWithPath:str];
-    
-    
+
+
     AVAsset *asset = [AVAsset assetWithURL:sampleURL];
     NSLog(@"asset : %@", asset);
-
+    NSLog(@"---------------------------------------------------------------------- \n");
+    NSLog(@"\n asset.metadata : %@", [asset.metadata lastObject]);
+    NSLog(@"----------------------------------------------------------------------");
+    
+    
     AVAssetTrack *videoAssetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];//素材的视频轨
     AVAssetTrack *audioAssertTrack = [[asset tracksWithMediaType:AVMediaTypeAudio]objectAtIndex:0];//素材的音频轨
-    NSLog(@"\n %@ \n %@", videoAssetTrack, audioAssertTrack);
+    NSLog(@"视频轨 : %@ \n--------------------------\n音轨 : %@",
+          [videoAssetTrack.formatDescriptions lastObject],
+          [audioAssertTrack.formatDescriptions lastObject]);
+
+
+
+#pragma mark - audio
+    // 1 - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
+    //创建一个AVMutableComposition实例
+    AVMutableComposition *mixComposition = [AVMutableComposition composition];
+
+    // 2 - Video track
+    //创建一个轨道,类型是AVMediaTypeAudio
+    AVMutableCompositionTrack *firstTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
+                                                                        preferredTrackID:kCMPersistentTrackID_Invalid];
+
+    //获取firstAsset中的音频,插入轨道
+    [firstTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
+                        ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0]
+                         atTime:kCMTimeZero
+                          error:nil];
+
+#pragma mark - video
+    AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo
+                                                                                   preferredTrackID:kCMPersistentTrackID_Invalid];
+    [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
+                                   ofTrack:[[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0]
+                                    atTime:kCMTimeZero
+                                     error:nil];
+
+
+    // 4 - Get path
+    //创建输出路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *myPathDocs = [documentsDirectory stringByAppendingPathComponent:
+                            [NSString stringWithFormat:@"demo-%d.mp4", arc4random() % 1000]];
+    NSURL *url = [NSURL fileURLWithPath:myPathDocs];
+
+    // 5 - Create exporter
+    //创建输出对象
+    AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:mixComposition
+                                                                      presetName:AVAssetExportPresetMediumQuality];
+
+    NSString *vedioName = @"demo.mp4";
+    NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:vedioName];
+//    NSURL *url = [NSURL fileURLWithPath:exportPath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:exportPath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:exportPath error:nil];
+    }
+    exporter.outputFileType = @"com.apple.quicktime-movie";
+    exporter.outputURL = url;
+    exporter.shouldOptimizeForNetworkUse = YES;
     
-
-//    AVMutableComposition *composition = [AVMutableComposition composition];//这是工程文件
-//    AVMutableCompositionTrack *videoCompositionTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo
-//                                                                                preferredTrackID:kCMPersistentTrackID_Invalid]; //视频轨道
-//    [videoCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAssetTrack.timeRange.duration)
-//                                   ofTrack:videoAssetTrack
-//                                    atTime:kCMTimeZero error:nil];//在视频轨道插入一个时间段的视频
-
-
     /**
      *  初始化 movie
      */
-    _movie = [[GPUImageMovie alloc] initWithURL:sampleURL];
-//    _movie = [[GPUImageMovie alloc] initWithPlayerItem:_movie.playerItem]; //这样调用可以有声音有视频，但是发现不能用writer 方法存起来。
-//    _movie.playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
-//    NSLog(@"_movie.playerItem : %@", _movie.playerItem);
-
-    //    AVMutableCompositionTrack *audioCompositionTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio
-    //                                                                                preferredTrackID:kCMPersistentTrackID_Invalid];//音频轨道
-    //    [audioCompositionTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAssetTrack.timeRange.duration)
-    //                                   ofTrack:audioAssertTrack
-    //                                    atTime:kCMTimeZero
-    //                                     error:nil];//插入音频数据，否则没有声音
-//    _movie.playerItem = [[AVPlayerItem alloc] initWithURL:sampleURL];
-//    AVPlayer *player = [AVPlayer playerWithPlayerItem:_movie.playerItem];
-//    //    [_movie addTarget:filterView];
-//    _movie.playAtActualSpeed = YES;
-//    _movie.shouldRepeat = true;
-
-
+    _movie = [[GPUImageMovie alloc] initWithURL:url];
+    
     /**
      *  是否重复播放
      */
@@ -86,7 +118,7 @@
      *  设置代理 GPUImageMovieDelegate，只有一个方法 didCompletePlayingMovie
      */
     _movie.delegate = self;
-
+    
     /**
      *  This enables the benchmarking mode, which logs out instantaneous and average frame times to the console
      *
@@ -95,31 +127,90 @@
      *  每隔一段时间打印： Current frame time : 51.256001 ms，直到播放或加滤镜等操作完毕
      */
     _movie.runBenchmark = YES;
-
+    
     /**
      *  添加卡通滤镜
      */
-    GPUImageToonFilter *filter = [GPUImageToonFilter new];//胶片效果
-    //    GPUImageSharpenFilter *filter = [GPUImageSharpenFilter new];
+    //    GPUImageToonFilter *filter = [GPUImageToonFilter new];//胶片效果
+    GPUImageSharpenFilter *filter = [GPUImageSharpenFilter new];
     //    GPUImageThresholdedNonMaximumSuppressionFilter *filter = [GPUImageThresholdedNonMaximumSuppressionFilter new];
     [_movie addTarget:filter];
-
+    
     /**
      *  添加显示视图
      */
     [filter addTarget:self.gpuImageView];
-
-
+    
     /**
      *  视频处理后输出到 GPUImageView 预览时不支持播放声音，需要自行添加声音播放功能
      *
      *  开始处理并播放...
      */
-    [_movie startProcessing];
+//    [_movie startProcessing];
+
+
+    if ([[NSFileManager defaultManager] fileExistsAtPath:exportPath])
+    {
+        // 调用播放方法
+        [self playAudio:[NSURL fileURLWithPath:exportPath]];
+    } else {
+        NSLog(@"输出错误");
+    }
+
+
+    [exporter exportAsynchronouslyWithCompletionHandler:^{
+
+        [self playAudio:[NSURL fileURLWithPath:myPathDocs]];
+
+    }];
+
+#pragma mark ---------------------------------------------------------------------------------------------------------------------------
+
 }
+
+- (void)playAudio:(NSURL *)url {
+//    // 传入地址
+//    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
+//    // 播放器
+//    AVPlayer *player = [AVPlayer playerWithPlayerItem:playerItem];
+//    // 播放器layer
+//    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
+//    playerLayer.frame = self.view.frame;
+//    // 视频填充模式
+//    playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+//    // 添加到imageview的layer上
+//    [self.view.layer addSublayer:playerLayer];
+//    // 隐藏提示框 开始播放
+//    // 播放
+//    [player play];
+    
+
+}
+
 
 - (void)didCompletePlayingMovie {
     NSLog(@"已完成播放");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+
+    [_movie cancelProcessing];
+}
+
+
+-(void)exportDidFinish:(AVAssetExportSession*)session {
+    NSLog(@"%ld",session.status);
+    if (session.status == AVAssetExportSessionStatusCompleted) {
+        NSURL *outputURL = session.outputURL;
+        
+//        MPMoviePlayerViewController *theMovie = [[MPMoviePlayerViewController alloc] initWithContentURL:outputURL];
+//
+//        [self presentMoviePlayerViewControllerAnimated:theMovie];
+
+    }
+//    audioAsset = nil;
+//    firstAsset = nil;
+//    secondAsset = nil;
 }
 
 

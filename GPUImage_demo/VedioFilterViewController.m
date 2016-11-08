@@ -15,6 +15,9 @@
 
 @property (nonatomic, weak) GPUImageBilateralFilter *bilateraFilter; //双边滤波器
 @property (nonatomic, weak) GPUImageBrightnessFilter *brightnessFilter;// 亮度筛选器
+
+@property (nonatomic, strong) GPUImageSepiaFilter *filter;
+@property (nonatomic, strong) GPUImageMovieWriter *movieWriter;
 @end
 
 @implementation VedioFilterViewController
@@ -31,35 +34,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //创建视频源
-    self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1920x1080
-                                                                           cameraPosition:AVCaptureDevicePositionBack];
-    self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
-    
-    self.vedioFilterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
-    self.vedioFilterView.center = self.view.center;
-    
-    // 创建美颜滤镜
-    GPUImageFilterGroup *group = [GPUImageFilterGroup new];
-    
-    GPUImageBilateralFilter *bilateralFilter = [GPUImageBilateralFilter new];
-    [group addFilter:bilateralFilter];
-    _bilateraFilter = bilateralFilter;
-    
-    GPUImageBrightnessFilter *brightnessFilter = [GPUImageBrightnessFilter new];
-    [group addFilter:brightnessFilter];
-    _brightnessFilter = brightnessFilter;
-    
-    // 设置滤镜链
-    [_brightnessFilter addTarget:brightnessFilter];
-    [group setInitialFilters:@[bilateralFilter]];
-    group.terminalFilter = brightnessFilter;
-    
-    [self.view addSubview:self.vedioFilterView];
-    [self.videoCamera addTarget:self.vedioFilterView];
-//    [group addTarget:self.vedioFilterView];
-    [self.videoCamera startCameraCapture];
+//    //创建视频源
+//    self.videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1920x1080
+//                                                           cameraPosition:AVCaptureDevicePositionBack];
+//    self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//    self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
+//
+//    self.vedioFilterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
+//    self.vedioFilterView.center = self.view.center;
+//
+//    // 创建美颜滤镜
+//    GPUImageFilterGroup *group = [GPUImageFilterGroup new];
+//
+//    GPUImageBilateralFilter *bilateralFilter = [GPUImageBilateralFilter new];
+//    [group addFilter:bilateralFilter];
+//    _bilateraFilter = bilateralFilter;
+//
+//    GPUImageBrightnessFilter *brightnessFilter = [GPUImageBrightnessFilter new];
+//    [group addFilter:brightnessFilter];
+//    _brightnessFilter = brightnessFilter;
+//
+//    // 设置滤镜链
+//    [_brightnessFilter addTarget:brightnessFilter];
+//    [group setInitialFilters:@[bilateralFilter]];
+//    group.terminalFilter = brightnessFilter;
+//
+//    [self.view addSubview:self.vedioFilterView];
+//    [self.videoCamera addTarget:self.vedioFilterView];
+////    [group addTarget:self.vedioFilterView];
+//    [self.videoCamera startCameraCapture];
 }
 
 - (void)didReceiveMemoryWarning {

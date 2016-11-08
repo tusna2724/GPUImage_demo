@@ -67,28 +67,28 @@
     bilateralFilter = [GPUImageBilateralFilter new];
     bilateralFilter.distanceNormalizationFactor = 4.0;
     [self addFilter:bilateralFilter];
-    
+
     // Second pass: edge detection
     cannyEdgeFilter = [GPUImageCannyEdgeDetectionFilter new];
     [self addFilter:cannyEdgeFilter];
-    
+
     // Third pass: combination bilateral, edge detection and origin
     combinationFilter = [GPUImageCombinationFilter new];
     [self addFilter:combinationFilter];
-    
+
     // Adjust HSB
     hsbFilter = [GPUImageHSBFilter new];
     [hsbFilter adjustBrightness:1.1];
     [hsbFilter adjustSaturation:1.1];
-    
+
     [bilateralFilter addTarget:combinationFilter];
     [cannyEdgeFilter addTarget:combinationFilter];
-    
+
     [combinationFilter addTarget:hsbFilter];
-    
-    self.initialFilters = [NSArray arrayWithObjects:bilateralFilter,cannyEdgeFilter,combinationFilter,nil];
+
+    self.initialFilters = [NSArray arrayWithObjects:bilateralFilter, cannyEdgeFilter, combinationFilter, nil];
     self.terminalFilter = hsbFilter;
-    
+
     return self;
 }
 
