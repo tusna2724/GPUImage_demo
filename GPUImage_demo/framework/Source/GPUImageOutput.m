@@ -329,27 +329,26 @@ void reportAvailableMemoryForGPUImage(NSString *tag)
 
 - (UIImage *)imageFromCurrentFramebuffer;
 {
-	UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
+    UIDeviceOrientation deviceOrientation = [[UIDevice currentDevice] orientation];
     UIImageOrientation imageOrientation = UIImageOrientationLeft;
-	switch (deviceOrientation)
+    switch (deviceOrientation)
     {
-		case UIDeviceOrientationPortrait:
-			imageOrientation = UIImageOrientationUp;
-			break;
-		case UIDeviceOrientationPortraitUpsideDown:
-			imageOrientation = UIImageOrientationDown;
-			break;
-		case UIDeviceOrientationLandscapeLeft:
-			imageOrientation = UIImageOrientationLeft;
-			break;
-		case UIDeviceOrientationLandscapeRight:
-			imageOrientation = UIImageOrientationRight;
-			break;
-		default:
-			imageOrientation = UIImageOrientationUp;
-			break;
-	}
-    
+        case UIDeviceOrientationPortrait:
+            imageOrientation = UIImageOrientationUp;
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            imageOrientation = UIImageOrientationDown;
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            imageOrientation = UIImageOrientationLeft;
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            imageOrientation = UIImageOrientationRight;
+            break;
+        default:
+            imageOrientation = UIImageOrientationUp;
+            break;
+    }
     return [self imageFromCurrentFramebufferWithOrientation:imageOrientation];
 }
 
@@ -399,8 +398,7 @@ void reportAvailableMemoryForGPUImage(NSString *tag)
     return processedImage;
 }
 
-- (CGImageRef)newCGImageByFilteringImage:(NSImage *)imageToFilter
-{
+- (CGImageRef)newCGImageByFilteringImage:(NSImage *)imageToFilter {
     return [self newCGImageByFilteringCGImage:[imageToFilter CGImageForProposedRect:NULL context:[NSGraphicsContext currentContext] hints:nil]];
 }
 

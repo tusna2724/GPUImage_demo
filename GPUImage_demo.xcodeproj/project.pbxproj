@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9E3921A81DD0514E0012BAB7 /* keep.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3921A71DD0514E0012BAB7 /* keep.mp4 */; };
 		9E3921AC1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E3921AB1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 */; };
+		9E3921B41DD1B2830012BAB7 /* Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt in Resources */ = {isa = PBXBuildFile; fileRef = 9E3921B31DD1B2830012BAB7 /* Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt */; };
 		9EAB2A701DBEF5870024456D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2A6F1DBEF5870024456D /* main.m */; };
 		9EAB2A731DBEF5870024456D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2A721DBEF5870024456D /* AppDelegate.m */; };
 		9EAB2A761DBEF5870024456D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB2A751DBEF5870024456D /* ViewController.m */; };
@@ -268,6 +269,7 @@
 /* Begin PBXFileReference section */
 		9E3921A71DD0514E0012BAB7 /* keep.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = keep.mp4; path = "../../../../Downloads/KeepGuidePage-master/KeepGuidePage/keep.mp4"; sourceTree = "<group>"; };
 		9E3921AB1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "莫文蔚 - 阴天.mp3"; path = "../../../../Music/网易云音乐/莫文蔚 - 阴天.mp3"; sourceTree = "<group>"; };
+		9E3921B31DD1B2830012BAB7 /* Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt"; path = "../../../Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee/Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt"; sourceTree = "<group>"; };
 		9EAB2A6B1DBEF5870024456D /* GPUImage_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImage_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAB2A6F1DBEF5870024456D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9EAB2A711DBEF5870024456D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 				9ED07A581DC2F9EA0082762B /* VedioFilterViewController.m */,
 				9ECB809F1DD018E400922807 /* VideoMusicViewController.h */,
 				9ECB80A01DD018E400922807 /* VideoMusicViewController.m */,
+				9E3921B31DD1B2830012BAB7 /* Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt */,
 				9E3921AB1DD17F7F0012BAB7 /* 莫文蔚 - 阴天.mp3 */,
 				9E3921A71DD0514E0012BAB7 /* keep.mp4 */,
 				9EAB2A771DBEF5870024456D /* Main.storyboard */,
@@ -1331,6 +1334,7 @@
 				9EAB2A791DBEF5870024456D /* Main.storyboard in Resources */,
 				9EAB2F301DBF05040024456D /* Info.plist in Resources */,
 				9EAB2E851DBF05030024456D /* lookup_miss_etikate.png in Resources */,
+				9E3921B41DD1B2830012BAB7 /* Westworld.S01E06.The.Adversary.1080p.HBO.WEBRip.DD5.1.H.264-monkee.简体&英文.srt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
